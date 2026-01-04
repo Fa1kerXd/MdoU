@@ -228,9 +228,15 @@ Cada card de beatmap mostra:
 ## 🗂️ Estrutura do Projeto
 
 ```
-MdoU/
+MDOU/
+├── src/                 
+    ├── BeatmapCard.py
+    ├── ConfigDialog.py    
+    ├── DownloadThread.py
+    ├── MainWindow.py
+    ├── OsuAPIClient.py   # Cliente da API do osu!
+    └── SearchThread.py
 ├── main.py                 # Aplicação principal
-├── osu_api_utils.py       # Cliente da API do osu!
 ├── requirements.txt        # Dependências Python
 ├── README.md              # Este arquivo
 ├── LICENSE                # Licença do projeto
@@ -256,8 +262,15 @@ MdoU/
 
 ### requirements.txt
 ```txt
-PySide6>=6.0.0
-requests>=2.31.0
+certifi==2026.1.4
+charset-normalizer==3.4.4
+idna==3.11
+PySide6==6.10.1
+PySide6_Addons==6.10.1
+PySide6_Essentials==6.10.1
+requests==2.32.5
+shiboken6==6.10.1
+urllib3==2.6.2
 ```
 
 ### Instalação Rápida
@@ -377,7 +390,7 @@ Precisa de ajuda? Há várias formas de obter suporte:
 
 - 📖 [Documentação da API do osu!](https://osu.ppy.sh/docs/)
 - 💬 [Discord do osu!](https://discord.gg/osu)
-- 🐛 [Issues do GitHub](https://github.com/seu-usuario/osu-beatmap-finder/issues)
+- 🐛 [Issues do GitHub](https://github.com/Fa1kerXd/MdoU/issues)
 ---
 
 ## ⚠️ Disclaimer
@@ -393,10 +406,10 @@ Este projeto **NÃO é afiliado** ao osu! ou ppy Pty Ltd. É um projeto da comun
 
 ## 📊 Status do Projeto
 
-![GitHub last commit](https://img.shields.io/github/last-commit/seu-usuario/osu-beatmap-finder)
-![GitHub issues](https://img.shields.io/github/issues/seu-usuario/osu-beatmap-finder)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/seu-usuario/osu-beatmap-finder)
-![GitHub stars](https://img.shields.io/github/stars/seu-usuario/osu-beatmap-finder?style=social)
+![GitHub last commit](https://img.shields.io/github/last-commit/Fa1kerXd/MdoU)
+![GitHub issues](https://img.shields.io/github/issues/Fa1kerXd/MdoU)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/Fa1kerXd/MdoU)
+![GitHub stars](https://img.shields.io/github/stars/Fa1kerXd/MdoU?style=social)
 
 ---
 
@@ -406,6 +419,6 @@ Este projeto **NÃO é afiliado** ao osu! ou ppy Pty Ltd. É um projeto da comun
 
 Feito com ❤️ e ☕ por [Augusto]
 
-[⬆ Voltar ao topo](#-osu-beatmap-finder--downloader)
+[⬆ Voltar ao topo](#MdoU)
 
 </div>
