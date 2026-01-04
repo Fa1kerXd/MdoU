@@ -406,6 +406,6 @@ Este projeto **NÃO é afiliado** ao osu! ou ppy Pty Ltd. É um projeto da comun
 
 Feito com ❤️ e ☕ por [Augusto]
 
-[⬆ Voltar ao topo](#-osu-beatmap-finder--downloader)
+[⬆ Voltar ao topo](#-MdoU--downloader)
 
 </div>
