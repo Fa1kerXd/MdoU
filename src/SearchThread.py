@@ -1,5 +1,5 @@
 from PySide6.QtCore import QThread, Signal
-from OsuAPIClient import OsuAPIClient
+from .OsuAPIClient import OsuAPIClient
 
 
 class SearchThread(QThread):

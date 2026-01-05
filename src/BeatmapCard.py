@@ -6,9 +6,9 @@ from PySide6.QtWidgets import (
 )
 from PySide6.QtCore import Qt
 from typing import Optional
-from OsuAPIClient import BeatmapSet
-from DownloadThread import DownloadThread
-from styles import BeatmapCardStyle
+from .OsuAPIClient import BeatmapSet
+from .DownloadThread import DownloadThread
+from .styles import BeatmapCardStyle
 
 class BeatmapCard(QFrame):
     """Card que exibe informações de um beatmap"""
@@ -33,7 +33,7 @@ class BeatmapCard(QFrame):
         #Placeholder para imagem
         img_label = QLabel("🎵")     
         img_label.setFixedSize(100, 100)
-        img_label.setAlignment(Qt.AlignCenter) 
+        img_label.setAlignment(Qt.AlignmentFlag.AlignCenter) 
         img_label.setStyleSheet(BeatmapCardStyle.beatmapcard_img_label)  
         layout.addWidget(img_label)
 

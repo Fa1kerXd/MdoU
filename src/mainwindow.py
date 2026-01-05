@@ -1,28 +1,24 @@
 import sys
-import webbrowser
 import os
-from pathlib import Path
 from PySide6.QtWidgets import (
-    QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
-    QLineEdit, QPushButton, QLabel, QScrollArea, QFrame,
-    QComboBox, QMessageBox, QDialog, QFormLayout, QStatusBar,
-    QProgressBar, QFileDialog
+    QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
+    QLineEdit, QPushButton, QLabel, QScrollArea, 
+    QComboBox, QMessageBox, QDialog,QStatusBar
+    
 )
-from PySide6.QtCore import Qt, QThread, Signal, QSize
-from PySide6.QtGui import QPixmap, QIcon
-import requests
+from PySide6.QtCore import Qt
 from typing import List, Optional
-from dataclasses import dataclass
-from ConfigDialog import ConfigDialog
-from OsuAPIClient import OsuAPIClient, BeatmapSet
-from SearchThread import SearchThread
-from DownloadThread import DownloadThread
-from styles import MainWindowStyle
-from BeatmapCard import BeatmapCard
+from src.ConfigDialog import ConfigDialog
+from src.OsuAPIClient import OsuAPIClient, BeatmapSet
+from src.SearchThread import SearchThread
+from src.DownloadThread import DownloadThread
+from src.styles import MainWindowStyle
+from src.BeatmapCard import BeatmapCard
 
 class MainWindow(QMainWindow):
     # Janela Principal do aplicativo
     def __init__(self):
+        super().__init__()
         self.client: Optional[OsuAPIClient] = None 
         self.search_thread: Optional[SearchThread] = None
         self.download_path: str = ""
@@ -90,7 +86,7 @@ class MainWindow(QMainWindow):
         self.results_layout.setAlignment(Qt.AlignmentFlag.AlignTop)
 
         scroll.setWidget(self.results_widget)
-        main_layout.addLayout(scroll)
+        main_layout.addWidget(scroll)
 
         #Status Bar
         self.status_bar = QStatusBar()
