@@ -21,12 +21,6 @@ class BeatmapSet:
     beatmaps_count: int
 
 
-
-
-
-
-
-
 class OsuAPIClient:
     """Cliente para interagir com a API v2 do osu!"""
     
@@ -109,4 +103,3 @@ class OsuAPIClient:
         except Exception as e:
             print(f"Erro ao buscar: {e}")
             return []
-
