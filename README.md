@@ -200,20 +200,18 @@ Cada card de beatmap mostra:
 
 ```
 MDOU/
-├── src/                 
-    ├── BeatmapCard.py
-    ├── ConfigDialog.py    
-    ├── DownloadThread.py
-    ├── MainWindow.py
-    ├── OsuAPIClient.py   # Cliente da API do osu!
-    └── SearchThread.py
-├── main.py                 # Aplicação principal
-├── requirements.txt        # Dependências Python
-├── README.md              # Este arquivo
-├── LICENSE                # Licença do projeto
-├── .gitignore            # Arquivos ignorados pelo Git
-└── assets/               # (Opcional) Imagens e ícones
-    └── icon.png
+├── src/
+│   ├── AudioManager.py       # NOVO
+│   ├── ImageLoader.py        # NOVO
+│   ├── BeatmapCard.py        # ATUALIZADO
+│   ├── ConfigDialog.py       # Sem mudanças
+│   ├── DownloadThread.py     # Sem mudanças
+│   ├── MainWindow.py         # ATUALIZADO
+│   ├── OsuAPIClient.py       # ATUALIZADO
+│   └── SearchThread.py       # ATUALIZADO
+├── main.py
+├── requirements.txt          # ATUALIZADO
+└── README.md
 ```
 
 ---
@@ -272,8 +270,8 @@ pip install PySide6 requests
 ## 🔜 Roadmap
 
 ### Versão 2.0 (Planejada)
-- [ ] 🎵 Preview de áudio dos beatmaps
-- [ ] 🖼️ Carregamento de capas
+- [] 🎵 Preview de áudio dos beatmaps
+- [] 🖼️ Carregamento de capas
 - [ ] 📊 Filtros avançados (BPM, duração, etc.)
 - [ ] ⭐ Sistema de favoritos local
 - [ ] 📁 Organização automática por artista/mapper
