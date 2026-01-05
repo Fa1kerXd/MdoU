@@ -38,7 +38,7 @@ class MainWindow(QMainWindow):
         self.show_config_dialog()
     
     def setup_ui(self):
-        self.setWindowTitle("osu! Beatmap Finder & Downloader")
+        self.setWindowTitle("MdoU!")
         self.setMinimumSize(950, 700)
         self.setWindowIcon(QIcon(str(ICON)))
         self.setStyleSheet("""
@@ -88,7 +88,7 @@ class MainWindow(QMainWindow):
         main_layout.setContentsMargins(20, 20, 20, 20)
         
         # Header
-        title_label = QLabel("🎵 osu! Beatmap Finder & Downloader")
+        title_label = QLabel("🎵 MdoU!")
         title_label.setStyleSheet("font-size: 24px; font-weight: bold; color: #ff66aa;")
         title_label.setAlignment(Qt.AlignCenter)
         main_layout.addWidget(title_label)
