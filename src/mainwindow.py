@@ -1,5 +1,6 @@
 import sys
 import os
+from pathlib import Path
 from PySide6.QtWidgets import (
     QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
     QLineEdit, QPushButton, QLabel, QScrollArea, 
@@ -7,12 +8,22 @@ from PySide6.QtWidgets import (
     
 )
 from PySide6.QtCore import Qt
+from PySide6.QtGui import QIcon
 from typing import List, Optional
 from src.ConfigDialog import ConfigDialog
 from src.OsuAPIClient import OsuAPIClient, BeatmapSet
 from src.SearchThread import SearchThread
 from src.DownloadThread import DownloadThread
 from src.BeatmapCard import BeatmapCard
+
+
+ROOT = Path(__file__).parent.parent
+ICON = ROOT / "assets" / "icon.png"
+
+
+
+
+
 
 class MainWindow(QMainWindow):
     """Janela principal do aplicativo"""
@@ -29,6 +40,7 @@ class MainWindow(QMainWindow):
     def setup_ui(self):
         self.setWindowTitle("osu! Beatmap Finder & Downloader")
         self.setMinimumSize(950, 700)
+        self.setWindowIcon(QIcon(str(ICON)))
         self.setStyleSheet("""
             QMainWindow {
                 background-color: #1a1a1a;
