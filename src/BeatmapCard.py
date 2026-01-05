@@ -8,7 +8,7 @@ from PySide6.QtCore import Qt
 from typing import Optional
 from OsuAPIClient import BeatmapSet
 from DownloadThread import DownloadThread
-
+from styles import BeatmapCardStyle
 
 class BeatmapCard(QFrame):
     """Card que exibe informações de um beatmap"""
@@ -25,18 +25,7 @@ class BeatmapCard(QFrame):
         self.setLineWidth(2)
         self.setMinimumHeight(140)
         self.setMaximumHeight(140)
-        self.setStyleSheet("""
-            BeatmapCard {
-                background-color: ##2a2a2a;
-                border: 1px solid #444;
-                border-radius: 8px;
-                margin: 5px;
-            }
-            BeatmapCard:hover {
-                background-color: #333;
-                border: 1px solid #666
-            }
-        """)
+        self.setStyleSheet(BeatmapCardStyle.beatmapcard)
 
         layout = QHBoxLayout(self)
         layout.setContentsMargins(10, 10, 10, 10)
@@ -45,13 +34,7 @@ class BeatmapCard(QFrame):
         img_label = QLabel("🎵")     
         img_label.setFixedSize(100, 100)
         img_label.setAlignment(Qt.AlignCenter) 
-        img_label.setStyleSheet("""
-            QLabel {
-                background-color: #1a1a1a;
-                border-radius: 5px;
-                font-size: 40px;
-            }
-        """)  
+        img_label.setStyleSheet(BeatmapCardStyle.beatmapcard_img_label)  
         layout.addWidget(img_label)
 
         #Informações
@@ -89,56 +72,18 @@ class BeatmapCard(QFrame):
         open_btn = QPushButton("Abrir no site")
         open_btn.setFixedSize(120, 30)
         open_btn.clicked.connect(self.open_in_browser)
-        open_btn.setStyleSheet("""
-            QPushButton {
-                background-color: #ff66aa;
-                color: white;
-                border: none;
-                border-radius: 5px;
-                font-weight: bold;
-            }
-            QPushButton:hover {
-                background-color: #ff88cc;
-            }
-        """)
+        open_btn.setStyleSheet(BeatmapCardStyle.open_btn_style)
 
         self.download_btn = QPushButton("📥 Baixar")
         self.download_btn.setFixedSize(120, 30)
         self.download_btn.clicked.connect(self.start_download)
-        self.download_btn.setStyleSheet("""
-            QPushButton {
-                background-color: #66aaff;
-                color: white;
-                border: none;
-                border-radius: 5px;
-                font-weight: bold;
-            }
-            QPushButton:hover {
-                background-color: #88ccff;
-            }
-            QPushButton:disabled {
-                background-color: #555;
-                color: #888;
-            }
-        """)
+        self.download_btn.setStyleSheet(BeatmapCardStyle.start_download_btn_style)
 
         #Barra de progresso (inicialmente oculta)
         self.progress_bar = QProgressBar()
         self.progress_bar.setFixedSize(120,30)
         self.progress_bar.setVisible(False)
-        self.progress_bar.setStyleSheet("""
-            QProgressBar {
-                border: 1px solid #444;
-                border-radius: 5px;
-                text-align: center;
-                background-color: #1a1a1a;
-                color: #fff;
-            }
-            QProgressBar::chunk {
-                background-color: #66aaff;
-                border-radius: 4px;
-            }
-        """)
+        self.progress_bar.setStyleSheet(BeatmapCardStyle.progress_bar_style)
 
         buttons_layout.addWidget(open_btn)
         buttons_layout.addWidget(self.download_btn)
@@ -167,15 +112,7 @@ class BeatmapCard(QFrame):
         self.download_btn.setEnabled(True)
         if success:
             self.download_btn.setText("✅ Concluído")
-            self.download_btn.setStyleSheet("""
-                QPushButton {
-                    background-color: #66ff66;
-                    color: white;
-                    border: none;
-                    border-radius: 5px;
-                    font-weight: bold;
-                }
-            """)
+            self.download_btn.setStyleSheet(BeatmapCardStyle.reset_btn_style)
         else:
             self.download_btn.setText("📥 Baixar")
         self.progress_bar.setVisible(True)
